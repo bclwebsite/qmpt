@@ -1,0 +1,1795 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Quality Movement Physical Therapy & Wellness | Dr. Rupa Patel, DPT</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ─────────────────────────────────────────
+   BRAND TOKENS
+───────────────────────────────────────── */
+:root {
+  --teal:        #09727a;
+  --teal-d:      #065c63;
+  --teal-l:      #0a8f99;
+  --teal-pale:   #d6ecee;
+  --teal-mist:   #e4f2f3;
+  --orange:      #ff7512;
+  --orange-d:    #e06210;
+  --orange-pale: #fdeede;
+  --gray:        #555658;
+  --gray-l:      #7c7e80;
+  --ink:         #1a1f24;
+  --body:        #3e4248;
+  --rule:        #c8d8da;
+  --bg:          #eef5f6;
+  --off:         #e4eff0;
+  --shadow-sm:   0 2px 12px rgba(9,114,122,0.08);
+  --shadow-md:   0 8px 40px rgba(9,114,122,0.12);
+  --shadow-lg:   0 24px 80px rgba(9,114,122,0.16);
+}
+
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; }
+
+body {
+  font-family:'Nunito Sans', sans-serif;
+  background:var(--bg);
+  color:var(--body);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+
+/* ─────────────────────────────────────────
+   NAV
+───────────────────────────────────────── */
+nav {
+  background:#eef5f6;
+  border-bottom:1px solid var(--rule);
+  padding:0 64px;
+  display:flex; align-items:center; justify-content:space-between;
+  position:sticky; top:0; z-index:200;
+  box-shadow:var(--shadow-sm);
+}
+.brand {
+  display:flex; align-items:center;
+  text-decoration:none; padding:6px 0;
+}
+.brand-logo-img {
+  height:42px; width:auto;
+  display:block;
+  mix-blend-mode:multiply;
+}
+.nav-links { display:flex; align-items:center; gap:0; list-style:none; }
+.nav-links li a {
+  display:block;
+  padding:14px 18px;
+  font-size:0.82rem; font-weight:700;
+  letter-spacing:0.06em; text-transform:uppercase;
+  color:var(--gray); text-decoration:none;
+  border-bottom:3px solid transparent;
+  transition:color 0.2s, border-color 0.2s;
+}
+.nav-links li a:hover { color:var(--teal); border-bottom-color:var(--teal); }
+.nav-book {
+  background:var(--orange);
+  color:#fff !important;
+  padding:11px 28px !important;
+  border-radius:6px;
+  margin-left:16px;
+  border-bottom:none !important;
+  transition:background 0.2s, box-shadow 0.2s !important;
+  box-shadow:0 4px 16px rgba(255,117,18,0.3);
+}
+.nav-book:hover {
+  background:var(--orange-d) !important;
+  border-bottom:none !important;
+  box-shadow:0 6px 24px rgba(255,117,18,0.4) !important;
+}
+.hamburger { display:none; background:none; border:none; cursor:pointer; padding:4px; }
+.hamburger span { display:block; width:24px; height:2px; background:var(--teal); margin:5px 0; border-radius:2px; }
+.nav-contact {
+  display:flex; align-items:center; gap:22px;
+}
+.nav-contact-item {
+  display:flex; align-items:center; gap:6px;
+  font-size:0.78rem; font-weight:600;
+  color:var(--gray-l); letter-spacing:0.02em;
+  white-space:nowrap;
+}
+.nav-contact-item a { color:var(--gray-l); text-decoration:none; transition:color 0.2s; }
+.nav-contact-item a:hover { color:var(--teal); }
+.nav-contact-icon { font-size:0.8rem; color:var(--teal); }
+
+/* ─────────────────────────────────────────
+   HERO
+───────────────────────────────────────── */
+.hero {
+  display:grid; grid-template-columns:55% 45%;
+  min-height:60vh;
+  background:var(--off);
+  position:relative; overflow:hidden;
+}
+
+/* subtle teal geometric accent */
+.hero::before {
+  content:'';
+  position:absolute; top:0; left:0; width:55%; height:100%;
+  background:
+    linear-gradient(to bottom right, var(--teal-mist) 0%, transparent 70%);
+  pointer-events:none;
+}
+/* orange accent bar on left edge */
+.hero::after {
+  content:'';
+  position:absolute; left:0; top:12%; bottom:12%;
+  width:4px;
+  background:linear-gradient(to bottom, var(--orange), var(--teal));
+  border-radius:2px;
+}
+
+.hero-content {
+  position:relative; z-index:2;
+  display:flex; flex-direction:column; justify-content:center;
+  padding:28px 72px 28px 80px;
+}
+
+.hero-credential {
+  display:inline-flex; align-items:center; gap:10px;
+  background:#ddeaec;
+  border:1px solid var(--rule);
+  border-left:3px solid var(--teal);
+  padding:10px 18px;
+  border-radius:6px;
+  box-shadow:var(--shadow-sm);
+  margin-bottom:36px;
+  width:fit-content;
+  animation:slideRight 0.7s ease both;
+}
+.hero-credential span {
+  font-size:0.75rem; font-weight:700;
+  letter-spacing:0.1em; text-transform:uppercase;
+  color:var(--teal);
+}
+.cred-dot { width:7px; height:7px; background:var(--orange); border-radius:50%; flex-shrink:0; }
+
+.hero-h1 {
+  font-family:'Playfair Display', serif;
+  font-size:clamp(2.8rem, 4.2vw, 4.4rem);
+  font-weight:700;
+  line-height:1.12;
+  color:var(--ink);
+  margin-bottom:10px;
+  animation:fadeUp 0.7s 0.1s ease both;
+}
+.hero-h1 em {
+  font-style:italic;
+  color:var(--teal);
+}
+.hero-h1 .orange-word { color:var(--orange); font-style:normal; }
+.hero-tagline {
+  font-family:'Playfair Display', serif;
+  font-size:1.15rem; font-weight:400; font-style:italic;
+  color:var(--gray-l);
+  margin-bottom:28px;
+  animation:fadeUp 0.7s 0.18s ease both;
+}
+
+.hero-divider {
+  width:56px; height:3px;
+  background:linear-gradient(to right, var(--orange), var(--teal));
+  border-radius:2px; margin-bottom:28px;
+  animation:fadeUp 0.7s 0.22s ease both;
+}
+
+.hero-desc {
+  font-size:1.0rem; font-weight:400; line-height:1.85;
+  color:var(--body); max-width:480px;
+  margin-bottom:44px;
+  animation:fadeUp 0.7s 0.3s ease both;
+}
+
+.hero-actions {
+  display:flex; gap:14px; flex-wrap:wrap;
+  margin-bottom:56px;
+  animation:fadeUp 0.7s 0.38s ease both;
+}
+.btn-primary {
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--teal);
+  color:#fff; text-decoration:none;
+  padding:15px 34px; border-radius:6px;
+  font-size:0.88rem; font-weight:700; letter-spacing:0.06em;
+  text-transform:uppercase;
+  box-shadow:0 4px 20px rgba(9,114,122,0.3);
+  transition:background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover {
+  background:var(--teal-d);
+  transform:translateY(-2px);
+  box-shadow:0 8px 28px rgba(9,114,122,0.38);
+}
+.btn-primary .arrow { font-size:1rem; transition:transform 0.2s; }
+.btn-primary:hover .arrow { transform:translateX(4px); }
+
+.btn-secondary {
+  display:inline-flex; align-items:center; gap:8px;
+  border:2px solid var(--teal);
+  color:var(--teal); text-decoration:none;
+  padding:13px 32px; border-radius:6px;
+  font-size:0.88rem; font-weight:700; letter-spacing:0.06em;
+  text-transform:uppercase;
+  transition:background 0.2s, color 0.2s;
+}
+.btn-secondary:hover { background:var(--teal); color:#fff; }
+
+/* trust indicators */
+.hero-trust {
+  display:flex; gap:32px; flex-wrap:wrap;
+  animation:fadeUp 0.7s 0.46s ease both;
+}
+.trust-item {
+  display:flex; align-items:center; gap:10px;
+}
+.trust-icon {
+  width:38px; height:38px; border-radius:8px;
+  background:var(--teal-pale);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1rem; flex-shrink:0;
+  color:var(--teal);
+}
+.trust-label { font-size:0.78rem; font-weight:700; color:var(--ink); line-height:1.35; }
+.trust-sub { font-size:0.72rem; color:var(--gray-l); }
+
+/* hero image side */
+.hero-image {
+  position:relative; overflow:hidden;
+}
+.hero-image img {
+  width:100%; height:100%; object-fit:cover; display:block;
+  filter:saturate(0.9) brightness(0.93);
+  animation:zoomIn 1.4s ease both;
+}
+/* teal wash overlay */
+.hero-image::after {
+  content:'';
+  position:absolute; inset:0;
+  background:
+    linear-gradient(to right, var(--off) 0%, rgba(247,250,250,0.1) 22%, transparent 40%),
+    linear-gradient(to top, rgba(9,114,122,0.35) 0%, transparent 50%);
+}
+/* orange bottom line */
+.hero-img-line {
+  position:absolute; bottom:0; left:0; right:0;
+  height:5px;
+  background:linear-gradient(to right, var(--teal), var(--orange));
+  z-index:2;
+}
+
+
+/* ─────────────────────────────────────────
+   SPECIALTIES BAR
+───────────────────────────────────────── */
+.spec-dot { width:8px; height:8px; background:var(--orange); border-radius:50%; flex-shrink:0; }
+.spec-bar {
+  background:var(--teal);
+  padding:0 32px;
+  display:flex; align-items:stretch; flex-wrap:wrap; gap:0;
+  justify-content:space-between;
+}
+.spec-item {
+  display:flex; align-items:center; gap:8px;
+  padding:14px 16px;
+  border-right:1px solid rgba(255,255,255,0.12);
+  white-space:nowrap; cursor:default;
+  transition:background 0.2s;
+  flex:1; justify-content:center;
+}
+.spec-item:hover { background:rgba(255,255,255,0.07); }
+.spec-label {
+  font-size:0.72rem; font-weight:700;
+  letter-spacing:0.08em; text-transform:uppercase;
+  color:rgba(255,255,255,0.9);
+}
+
+/* ─────────────────────────────────────────
+   SHARED SECTION STYLES
+───────────────────────────────────────── */
+.section-eyebrow {
+  display:inline-flex; align-items:center; gap:10px;
+  font-size:0.72rem; font-weight:700;
+  letter-spacing:0.22em; text-transform:uppercase;
+  color:var(--orange);
+  margin-bottom:14px;
+}
+.section-eyebrow::before {
+  content:''; display:inline-block;
+  width:28px; height:2px; background:var(--orange);
+  border-radius:2px; flex-shrink:0;
+}
+.section-eyebrow.teal-ey { color:var(--teal); }
+.section-eyebrow.teal-ey::before { background:var(--teal); }
+
+.section-title {
+  font-family:'Playfair Display', serif;
+  font-size:clamp(2rem, 3vw, 2.9rem);
+  font-weight:700; line-height:1.18;
+  color:var(--ink);
+  margin-bottom:18px;
+}
+.section-title em { font-style:italic; color:var(--teal); }
+.section-title .orange-hi { color:var(--orange); font-style:normal; }
+
+.section-body {
+  font-size:0.97rem; font-weight:400; line-height:1.9;
+  color:var(--body);
+}
+
+/* ─────────────────────────────────────────
+   ABOUT / MEET DR. PATEL
+───────────────────────────────────────── */
+.about {
+  display:flex; align-items:flex-start; gap:48px;
+  padding:32px 80px;
+  background:var(--off);
+}
+.about-img-col {
+  position:relative; flex-shrink:0;
+  width:220px; height:290px;
+  border-radius:16px; overflow:hidden;
+  box-shadow:var(--shadow-md);
+}
+.about-img-col img { width:100%; height:100%; object-fit:cover; object-position:top; display:block; }
+.about-img-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(9,114,122,0.45) 0%, transparent 50%);
+}
+.about-img-tag {
+  position:absolute; bottom:0; left:0; right:0;
+  padding:14px 16px; z-index:2;
+}
+.about-img-tag h4 {
+  font-family:'Playfair Display', serif;
+  font-size:1rem; font-weight:700; color:#fff;
+  margin-bottom:2px;
+}
+.about-img-tag p {
+  font-size:0.68rem; font-weight:600;
+  letter-spacing:0.08em; text-transform:uppercase;
+  color:rgba(255,255,255,0.8);
+}
+.about-img-badge {
+  position:absolute; top:12px; right:12px; z-index:2;
+  background:var(--orange); color:#fff;
+  font-size:0.62rem; font-weight:700;
+  letter-spacing:0.08em; text-transform:uppercase;
+  padding:5px 10px; border-radius:5px;
+}
+
+.about-body {
+  flex:1;
+  display:flex; flex-direction:column; justify-content:flex-start;
+  padding-top:4px;
+}
+.about-body .section-eyebrow { margin-bottom:8px; }
+.about-body .section-title { margin-bottom:14px; }
+.about-body .section-body { margin-bottom:10px; }
+.about-highlights {
+  margin-top:18px;
+  display:grid; grid-template-columns:1fr 1fr; gap:10px;
+}
+.highlight-card {
+  background:#fff;
+  border:1px solid var(--rule);
+  border-left:3px solid var(--teal);
+  border-radius:8px;
+  padding:14px 16px;
+  display:flex; align-items:center; gap:14px;
+  transition:box-shadow 0.2s, transform 0.2s, border-left-color 0.2s;
+}
+.highlight-card:hover {
+  box-shadow:var(--shadow-sm);
+  transform:translateY(-2px);
+  border-left-color:var(--orange);
+}
+.highlight-card-icon {
+  width:38px; height:38px; flex-shrink:0;
+  background:var(--teal-pale);
+  border-radius:8px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.05rem;
+}
+.highlight-card-text { display:flex; flex-direction:column; gap:2px; }
+.highlight-card-title {
+  font-size:0.78rem; font-weight:700;
+  color:var(--ink); letter-spacing:0.02em;
+}
+.highlight-card-desc {
+  font-size:0.71rem; color:var(--gray-l);
+  line-height:1.5; font-weight:400;
+}
+.about-cta-row {
+  margin-top:24px;
+  display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+}
+.medicare-badge {
+  display:inline-flex; align-items:center; gap:7px;
+  background:var(--teal-pale); border:1px solid rgba(9,114,122,0.25);
+  color:var(--teal-d); font-size:0.75rem; font-weight:700;
+  letter-spacing:0.08em; padding:8px 16px; border-radius:6px;
+}
+.medicare-badge::before { content:'✓'; color:var(--teal); font-size:0.8rem; }
+
+/* ─────────────────────────────────────────
+   SERVICES
+───────────────────────────────────────── */
+.services {
+  background:var(--off);
+  padding:28px 64px 52px;
+}
+.services-header {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:48px; align-items:end;
+  margin-bottom:60px;
+}
+.services-desc {
+  font-size:0.95rem; line-height:1.85;
+  color:var(--body); font-weight:400;
+}
+.services-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.svc-card {
+  background:#e8f3f4;
+  border:1px solid var(--rule);
+  border-radius:12px;
+  padding:0 0 24px 0;
+  position:relative; overflow:hidden;
+  transition:box-shadow 0.3s, transform 0.3s, border-color 0.3s;
+  cursor:default;
+}
+.svc-card::before {
+  content:'';
+  position:absolute; top:0; left:0; right:0;
+  height:4px;
+  background:linear-gradient(to right, var(--teal), var(--teal-l));
+  opacity:0; transition:opacity 0.3s;
+}
+.svc-card:hover {
+  box-shadow:var(--shadow-md);
+  transform:translateY(-5px);
+  border-color:rgba(9,114,122,0.2);
+}
+.svc-card:hover::before { opacity:1; }
+.svc-card-icon {
+  display:none;
+}
+.svc-card-num {
+  position:absolute; top:16px; right:20px;
+  font-family:'Playfair Display', serif;
+  font-size:2.8rem; font-weight:700;
+  color:rgba(9,114,122,0.07); line-height:1;
+}
+.svc-card h3 {
+  font-family:'Playfair Display', serif;
+  font-size:1.18rem; font-weight:700;
+  color:var(--ink); margin-bottom:8px; margin-top:0;
+}
+.svc-card p {
+  font-size:0.85rem; line-height:1.8;
+  color:var(--body); font-weight:400; margin:0;
+}
+.svc-card-tag {
+  display:inline-block; margin-top:14px;
+  font-size:0.7rem; font-weight:700;
+  letter-spacing:0.1em; text-transform:uppercase;
+  color:var(--teal); padding:5px 12px;
+  background:var(--teal-pale); border-radius:4px;
+}
+
+/* ─── SERVICE CARD IMAGE ─── */
+.svc-card-img {
+  width:100%; height:190px;
+  border-radius:0; overflow:hidden;
+  margin-bottom:0; position:relative;
+}
+.svc-card-img img {
+  width:100%; height:100%; object-fit:cover; display:block;
+  transition:transform 0.5s ease;
+  filter:saturate(0.85);
+}
+.svc-card:hover .svc-card-img img { transform:scale(1.05); }
+.svc-card-img::after {
+  content:'';
+  position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(9,114,122,0.18) 0%, transparent 60%);
+  pointer-events:none;
+}
+.svc-card-body {
+  padding:18px 22px 0;
+}
+
+/* ─────────────────────────────────────────
+   CREDENTIALS / STATS
+───────────────────────────────────────── */
+.credentials {
+  background:var(--teal);
+  padding:40px 64px;
+  display:grid; grid-template-columns:1fr 2fr; gap:80px; align-items:center;
+}
+.credentials-left h2 {
+  font-family:'Playfair Display', serif;
+  font-size:2.2rem; font-weight:700; font-style:italic;
+  color:#fff; line-height:1.25;
+}
+.credentials-left h2 em { font-style:normal; color:var(--orange); }
+.credentials-left p {
+  margin-top:16px; font-size:0.92rem;
+  color:rgba(255,255,255,0.7); line-height:1.8; font-weight:300;
+}
+.credentials-grid {
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:0;
+}
+.cred-stat {
+  padding:0 32px;
+  border-left:1px solid rgba(255,255,255,0.18);
+}
+.cred-stat:first-child { border-left:none; padding-left:0; }
+.cred-stat-n {
+  font-family:'Playfair Display', serif;
+  font-size:2.8rem; font-weight:700;
+  color:#fff; line-height:1;
+}
+.cred-stat-n span { color:var(--orange); }
+.cred-stat-l {
+  font-size:0.76rem; font-weight:700;
+  letter-spacing:0.1em; text-transform:uppercase;
+  color:rgba(255,255,255,0.55); margin-top:8px;
+}
+
+/* ─────────────────────────────────────────
+   TESTIMONIALS / GOOGLE REVIEWS CAROUSEL
+───────────────────────────────────────── */
+.testimonials {
+  background:var(--bg);
+  padding:52px 64px;
+}
+.testimonials-header {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-bottom:36px; gap:40px;
+}
+.google-rating-badge {
+  display:flex; align-items:center; gap:14px;
+  background:#fff; border:1px solid var(--rule);
+  border-radius:12px; padding:14px 22px;
+  flex-shrink:0; box-shadow:var(--shadow-sm);
+}
+.google-g-logo {
+  width:42px; height:42px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+  background:#f8f9fa; border:1.5px solid #e8eaed;
+}
+.google-score {
+  font-size:1.15rem; font-weight:800; color:var(--ink);
+  display:flex; align-items:center; gap:6px; line-height:1;
+}
+.google-score .gstars { color:#fbbc04; font-size:1rem; letter-spacing:1px; }
+.google-count {
+  font-size:0.71rem; color:var(--gray-l); font-weight:600;
+  letter-spacing:0.03em; margin-top:4px;
+}
+.carousel-outer {
+  position:relative; display:flex; align-items:center;
+}
+.carousel-viewport { overflow:hidden; flex:1; }
+.reviews-track {
+  display:flex; gap:20px;
+  transition:transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94);
+  will-change:transform;
+}
+.rcard {
+  flex:0 0 calc((100% - 40px) / 3);
+  background:#fff; border:1px solid var(--rule);
+  border-radius:12px; padding:22px 22px 20px;
+  display:flex; flex-direction:column;
+  transition:box-shadow 0.2s, border-color 0.2s;
+}
+.rcard:hover { box-shadow:var(--shadow-md); border-color:rgba(9,114,122,0.2); }
+.rcard-header {
+  display:flex; align-items:center; gap:10px; margin-bottom:10px;
+}
+.rcard-avatar {
+  width:38px; height:38px; border-radius:50%;
+  background:var(--teal-pale); display:flex; align-items:center; justify-content:center;
+  font-size:0.78rem; font-weight:700; color:var(--teal);
+  font-family:'Nunito Sans',sans-serif; flex-shrink:0; letter-spacing:0.02em;
+}
+.rcard-info { flex:1; min-width:0; }
+.rcard-name {
+  font-size:0.82rem; font-weight:700; color:var(--ink);
+  line-height:1.3; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.rcard-date { font-size:0.67rem; color:var(--gray-l); margin-top:1px; }
+.rcard-gbadge {
+  width:20px; height:20px; border-radius:50%; flex-shrink:0;
+  background:#fff url("data:image/svg+xml,<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z' fill='%234285F4'/><path d='M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z' fill='%2334A853'/><path d='M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z' fill='%23FBBC05'/><path d='M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z' fill='%23EA4335'/></svg>") center/65% no-repeat;
+  border:1px solid #e0e0e0;
+  font-size:0;
+}
+.rcard-stars { color:#fbbc04; font-size:0.85rem; letter-spacing:1px; margin-bottom:10px; }
+.rcard-quote {
+  font-size:0.83rem; line-height:1.75; color:var(--body); flex:1;
+  display:-webkit-box; -webkit-line-clamp:5; -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.carousel-btn {
+  width:40px; height:40px; flex-shrink:0; border-radius:50%;
+  background:#fff; border:1px solid var(--rule);
+  cursor:pointer; display:flex; align-items:center; justify-content:center;
+  font-size:1.4rem; color:var(--teal); padding:0;
+  transition:background 0.2s, border-color 0.2s, box-shadow 0.2s;
+  box-shadow:var(--shadow-sm); line-height:1; z-index:2;
+}
+.carousel-btn:hover { background:var(--teal); color:#fff; border-color:var(--teal); box-shadow:var(--shadow-md); }
+.carousel-prev { margin-right:14px; }
+.carousel-next { margin-left:14px; }
+.carousel-dots {
+  display:flex; align-items:center; justify-content:center;
+  gap:8px; margin-top:22px;
+}
+.cdot {
+  width:8px; height:8px; border-radius:50%;
+  background:var(--rule); border:none; cursor:pointer;
+  padding:0; transition:background 0.2s, transform 0.2s;
+}
+.cdot.active { background:var(--teal); transform:scale(1.35); }
+.google-all-link {
+  text-align:center; margin-top:24px;
+}
+.google-all-link a {
+  display:inline-flex; align-items:center; gap:6px;
+  font-size:0.82rem; font-weight:700; color:var(--teal);
+  text-decoration:none; letter-spacing:0.03em;
+  padding-bottom:1px; border-bottom:1px solid transparent;
+  transition:border-color 0.2s;
+}
+.google-all-link a:hover { border-bottom-color:var(--teal); }
+
+/* ─────────────────────────────────────────
+   PROCESS / HOW IT WORKS
+───────────────────────────────────────── */
+.process {
+  background:var(--off);
+  padding:52px 64px;
+}
+.process-header { text-align:center; max-width:600px; margin:0 auto 36px; }
+.process-steps {
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:0;
+  position:relative;
+}
+/* connector line */
+.process-steps::before {
+  content:'';
+  position:absolute; top:36px; left:12.5%; right:12.5%;
+  height:2px;
+  background:linear-gradient(to right, var(--teal), var(--orange));
+  z-index:0;
+}
+.step {
+  display:flex; flex-direction:column; align-items:center;
+  text-align:center; padding:0 24px;
+  position:relative; z-index:1;
+}
+.step-num {
+  width:72px; height:72px; border-radius:50%;
+  background:#eef5f6;
+  border:3px solid var(--teal);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Playfair Display', serif;
+  font-size:1.5rem; font-weight:700;
+  color:var(--teal);
+  margin-bottom:20px;
+  box-shadow:var(--shadow-sm);
+  transition:background 0.2s, color 0.2s;
+}
+.step:hover .step-num { background:var(--teal); color:#fff; }
+.step h4 {
+  font-family:'Playfair Display', serif;
+  font-size:1.05rem; font-weight:700;
+  color:var(--ink); margin-bottom:10px;
+}
+.step p {
+  font-size:0.83rem; line-height:1.75;
+  color:var(--body);
+}
+.step-icon { font-size:1.4rem; margin-bottom:8px; }
+
+/* ─────────────────────────────────────────
+   AREA / COVERAGE
+───────────────────────────────────────── */
+.coverage {
+  background:var(--bg);
+  display:grid; grid-template-columns:1fr 1fr;
+}
+.coverage-img { position:relative; min-height:440px; overflow:hidden; }
+.coverage-img img { width:100%; height:100%; object-fit:cover; display:block; }
+.coverage-img::after {
+  content:'';
+  position:absolute; inset:0;
+  background:linear-gradient(to right, transparent 60%, #fff 100%);
+}
+.coverage-body {
+  padding:48px 56px;
+  display:flex; flex-direction:column; justify-content:center;
+}
+.coverage-body .section-body { margin-top:16px; margin-bottom:28px; }
+.coverage-pills { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:32px; }
+.cpill {
+  display:flex; align-items:center; gap:7px;
+  border:1.5px solid rgba(9,114,122,0.25);
+  padding:8px 16px; border-radius:6px;
+  font-size:0.78rem; font-weight:700;
+  color:var(--teal); letter-spacing:0.04em;
+  background:var(--teal-pale);
+  transition:background 0.2s, border-color 0.2s;
+}
+.cpill:hover { background:var(--teal); color:#fff; border-color:var(--teal); }
+.cpill-icon { font-size:0.85rem; }
+
+/* ─────────────────────────────────────────
+   CONTACT
+───────────────────────────────────────── */
+.contact {
+  background:var(--off);
+  padding:32px 64px;
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:40px; align-items:center;
+}
+.contact-left h2 { margin-bottom:16px; }
+.contact-left .section-body { margin-bottom:32px; }
+
+.contact-cards { display:flex; flex-direction:column; gap:12px; margin-bottom:28px; }
+.contact-card {
+  display:flex; align-items:center; gap:16px;
+  background:#edf5f6; border:1px solid var(--rule);
+  border-radius:10px; padding:16px 20px;
+  border-left:4px solid var(--teal);
+  transition:box-shadow 0.2s;
+}
+.contact-card:hover { box-shadow:var(--shadow-sm); }
+.contact-card-icon {
+  width:40px; height:40px; border-radius:8px;
+  background:var(--teal-pale); color:var(--teal);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.05rem; flex-shrink:0;
+}
+.contact-card-label {
+  font-size:0.68rem; font-weight:700;
+  letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--gray-l); margin-bottom:3px;
+}
+.contact-card-value {
+  font-size:0.92rem; font-weight:600;
+  color:var(--ink);
+}
+.contact-card-value a { color:var(--ink); text-decoration:none; }
+.contact-card-value a:hover { color:var(--teal); }
+
+.social-row { display:flex; gap:10px; }
+.social-btn {
+  display:flex; align-items:center; gap:8px;
+  border:1.5px solid var(--rule);
+  padding:9px 18px; border-radius:6px;
+  font-size:0.78rem; font-weight:700;
+  color:var(--gray); letter-spacing:0.06em;
+  text-decoration:none;
+  transition:border-color 0.2s, color 0.2s, background 0.2s;
+}
+.social-btn:hover { border-color:var(--teal); color:var(--teal); background:var(--teal-pale); }
+
+/* APPOINTMENT BOX */
+.contact-form-box {
+  background:var(--teal);
+  border-radius:16px;
+  padding:36px 36px;
+  box-shadow:var(--shadow-lg);
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  text-align:center; gap:20px;
+}
+.fg { margin-bottom:16px; }
+.fg label {
+  display:block;
+  font-size:0.71rem; font-weight:700;
+  letter-spacing:0.12em; text-transform:uppercase;
+  color:var(--gray); margin-bottom:7px;
+}
+.fg input, .fg textarea, .fg select {
+  width:100%; padding:12px 14px;
+  background:#ffffff;
+  border:1.5px solid var(--rule);
+  border-radius:7px;
+  font-family:'Nunito Sans', sans-serif;
+  font-size:0.9rem; color:var(--ink);
+  outline:none; resize:none;
+  transition:border-color 0.2s, box-shadow 0.2s;
+}
+.fg input:focus, .fg textarea:focus, .fg select:focus {
+  border-color:var(--teal);
+  box-shadow:0 0 0 3px rgba(9,114,122,0.1);
+}
+.fg-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.form-submit {
+  width:100%; padding:15px;
+  background:var(--orange); color:#fff;
+  border:none; border-radius:7px;
+  font-family:'Nunito Sans', sans-serif;
+  font-size:0.88rem; font-weight:700;
+  letter-spacing:0.08em; text-transform:uppercase;
+  cursor:pointer; margin-top:6px;
+  box-shadow:0 4px 20px rgba(255,117,18,0.3);
+  transition:background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.form-submit:hover {
+  background:var(--orange-d);
+  transform:translateY(-2px);
+  box-shadow:0 8px 28px rgba(255,117,18,0.4);
+}
+
+/* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
+footer {
+  background:var(--ink);
+  padding:56px 64px 36px;
+}
+.footer-top {
+  display:grid; grid-template-columns:1.2fr 1fr 1fr 1fr;
+  gap:48px; margin-bottom:48px;
+}
+.footer-brand { display:flex; flex-direction:column; gap:16px; }
+.footer-logo {
+  display:inline-flex; align-items:center;
+  text-decoration:none;
+  border-radius:8px;
+  padding:8px 16px;
+}
+.footer-logo-img {
+  height:48px; width:auto;
+  display:block;
+  mix-blend-mode:screen;
+}
+.footer-tagline { font-size:0.82rem; color:rgba(255,255,255,0.4); line-height:1.75; max-width:240px; }
+.footer-col h5 {
+  font-size:0.72rem; font-weight:700;
+  letter-spacing:0.16em; text-transform:uppercase;
+  color:rgba(255,255,255,0.5); margin-bottom:18px;
+}
+.footer-col a, .footer-col p {
+  display:block; font-size:0.84rem;
+  color:rgba(255,255,255,0.55);
+  text-decoration:none; margin-bottom:10px;
+  transition:color 0.2s;
+}
+.footer-col a:hover { color:#fff; }
+.footer-bottom {
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding-top:28px;
+  display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;
+}
+.footer-bottom p { font-size:0.76rem; color:rgba(255,255,255,0.3); }
+.footer-bottom-links { display:flex; gap:20px; }
+.footer-bottom-links a { font-size:0.76rem; color:rgba(255,255,255,0.3); text-decoration:none; transition:color 0.2s; }
+.footer-bottom-links a:hover { color:rgba(255,255,255,0.7); }
+
+/* ─────────────────────────────────────────
+   ANIMATIONS
+───────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(26px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes slideRight {
+  from { opacity:0; transform:translateX(-24px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+@keyframes zoomIn {
+  from { transform:scale(1.06); }
+  to   { transform:scale(1); }
+}
+.reveal {
+  opacity:0; transform:translateY(24px);
+  transition:opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in { opacity:1; transform:translateY(0); }
+
+/* ─────────────────────────────────────────
+   MOBILE
+───────────────────────────────────────── */
+@media(max-width:960px) {
+  /* NAV */
+  nav { padding:0 20px; }
+  .nav-contact { display:none; }
+  .nav-links { display:none; }
+  .hamburger { display:block; }
+
+  /* HERO */
+  .hero { grid-template-columns:1fr; min-height:auto; }
+  .hero-content { padding:48px 24px 40px; }
+  .hero-image { height:280px; }
+  .hero-desc { font-size:0.92rem; margin-bottom:28px; }
+  .hero-actions { margin-bottom:32px; gap:12px; }
+  .hero-trust { gap:20px; }
+
+  /* SPEC BAR */
+  .spec-bar { flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; justify-content:flex-start; padding:0 16px; }
+  .spec-bar::-webkit-scrollbar { display:none; }
+  .spec-item { flex:0 0 auto; }
+
+  /* ABOUT */
+  .about { flex-direction:column; align-items:stretch; padding:32px 24px; }
+  .about-left-col { width:100% !important; flex-shrink:1 !important; }
+  .about-img-col { width:100%; height:300px; }
+  .about-body { padding:24px 0; }
+  .about-highlights { grid-template-columns:1fr; }
+
+  /* SERVICES */
+  .services { padding:48px 24px; }
+  .services-header { grid-template-columns:1fr; gap:20px; }
+  .services-grid { grid-template-columns:1fr; }
+
+  /* CREDENTIALS */
+  .credentials { grid-template-columns:1fr; gap:44px; padding:48px 24px; }
+  .credentials-grid { grid-template-columns:1fr 1fr; gap:28px; }
+  .cred-stat { border-left:none; padding-left:0; border-top:1px solid rgba(255,255,255,0.15); padding-top:20px; }
+  .cred-stat:first-child, .cred-stat:nth-child(2) { border-top:none; }
+
+  /* REVIEWS CAROUSEL */
+  .testimonials { padding:48px 16px; }
+  .testimonials-header { flex-direction:column; align-items:flex-start; gap:20px; }
+  .google-rating-badge { align-self:flex-start; }
+  .rcard { flex:0 0 calc((100% - 20px) / 2); }
+  .carousel-btn { width:34px; height:34px; font-size:1.1rem; }
+  .carousel-prev { margin-right:8px; }
+  .carousel-next { margin-left:8px; }
+
+  /* PROCESS */
+  .process { padding:48px 24px; }
+  .process-steps { grid-template-columns:1fr 1fr; gap:36px; }
+  .process-steps::before { display:none; }
+
+  /* COVERAGE */
+  .coverage { grid-template-columns:1fr; }
+  .coverage-img { min-height:240px; }
+  .coverage-body { padding:48px 24px; }
+
+  /* CONTACT */
+  .contact { grid-template-columns:1fr; padding:48px 24px; gap:40px; }
+  .contact-form-box { padding:28px 24px; }
+
+  /* FOOTER */
+  footer { padding:40px 24px 24px; }
+  .footer-top { grid-template-columns:1fr 1fr; gap:36px; }
+  .footer-bottom { flex-direction:column; text-align:center; }
+}
+
+@media(max-width:540px) {
+  /* HERO */
+  .hero-content { padding:40px 20px 32px; }
+  .hero-h1 { font-size:2.1rem; line-height:1.15; }
+  .hero-tagline { font-size:1rem; }
+  .hero-desc { font-size:0.88rem; }
+  .hero-image { height:220px; }
+  .hero-credential { padding:8px 14px; margin-bottom:24px; }
+  .hero-trust { flex-direction:column; gap:12px; }
+  .hero-actions { flex-direction:column; gap:10px; margin-bottom:28px; }
+  .btn-primary, .btn-secondary { justify-content:center; width:100%; }
+
+  /* SPEC BAR */
+  .spec-label { font-size:0.65rem; }
+  .spec-item { padding:12px 12px; }
+
+  /* ABOUT */
+  .about { padding:24px 20px; }
+  .about-img-col { height:260px; }
+
+  /* SERVICES */
+  .services { padding:36px 20px; }
+  .svc-card-body { padding:20px 18px 18px; }
+
+  /* SECTION TITLES */
+  .section-title { font-size:1.85rem; }
+
+  /* REVIEWS */
+  .testimonials { padding:36px 12px; }
+  .carousel-btn { width:30px; height:30px; font-size:0.95rem; }
+  .carousel-prev { margin-right:4px; }
+  .carousel-next { margin-left:4px; }
+  .rcard { flex:0 0 100%; }
+  .rcard-quote { -webkit-line-clamp:6; }
+
+  /* CONTACT */
+  .contact { padding:36px 20px; gap:32px; }
+  .contact-form-box { padding:24px 18px; border-radius:12px; }
+
+  /* FOOTER */
+  footer { padding:32px 20px 20px; }
+  .footer-top { grid-template-columns:1fr; }
+  .footer-bottom-links { flex-wrap:wrap; justify-content:center; gap:12px; }
+
+  /* CREDENTIALS */
+  .credentials-grid { grid-template-columns:1fr; }
+
+  /* PROCESS */
+  .process-steps { grid-template-columns:1fr; }
+}
+
+/* ─── MOBILE NAV DRAWER ─── */
+.nav-links.open {
+  display:flex !important;
+  flex-direction:column;
+  position:absolute; top:100%; left:0; right:0;
+  background:#eef5f6;
+  border-top:1px solid var(--rule);
+  border-bottom:2px solid var(--teal);
+  padding:12px 24px 20px;
+  box-shadow:0 8px 32px rgba(9,114,122,0.12);
+  z-index:300;
+}
+.nav-links.open li a {
+  padding:14px 0;
+  border-bottom:1px solid var(--rule);
+  font-size:0.9rem;
+}
+.nav-links.open li:last-child a {
+  border-bottom:none;
+  margin-top:6px;
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="brand" href="#">
+    <img class="brand-logo-img" src="qmpt-images/image1.png" alt="Quality Movement Physical Therapy & Wellness"/>
+  </a>
+  <div class="nav-contact">
+    <div class="nav-contact-item">
+      <span class="nav-contact-icon">📞</span>
+      <a href="tel:7325952322">732-595-2322</a>
+    </div>
+    <div class="nav-contact-item">
+      <span class="nav-contact-icon">✉</span>
+      <a href="mailto:Rupa@qmptwellness.com">Rupa@qmptwellness.com</a>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="faq.html">FAQs</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://forms.gle/RFcvnA8nos7nFuX66" target="_blank" class="nav-book">Request Appointment</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-credential">
+      <div class="cred-dot"></div>
+      <span>Doctor of Physical Therapy · Middlesex &amp; Somerset County, NJ</span>
+    </div>
+
+    <h1 class="hero-h1">
+      Specialized Care for<br>
+      <em>Your</em> <span class="orange-word">Recovery.</span>
+    </h1>
+    <p class="hero-tagline">"Working Together to Achieve YOUR Best."</p>
+
+    <div class="hero-divider"></div>
+
+    <p class="hero-desc">
+      At Quality Movement PT &amp; Wellness, you receive one-on-one, individualized physical therapy that identifies the true root cause of your pain — not just the symptoms — so you can return to the life you love.
+    </p>
+
+    <div class="hero-actions">
+      <a href="https://forms.gle/RFcvnA8nos7nFuX66" target="_blank" class="btn-primary">
+        Request Appointment <span class="arrow">→</span>
+      </a>
+      <a href="#services" class="btn-secondary">View Services</a>
+    </div>
+
+    <div class="hero-trust">
+      <div class="trust-item">
+        <div class="trust-icon">★</div>
+        <div>
+          <div class="trust-label">5-Star Rated</div>
+          <div class="trust-sub">Patient Reviews</div>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🏥</div>
+        <div>
+          <div class="trust-label">Cash-Based Practice</div>
+          <div class="trust-sub">Medicare Accepted · Out-of-Network</div>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🏡</div>
+        <div>
+          <div class="trust-label">Home &amp; Telehealth</div>
+          <div class="trust-sub">Visits Available</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="hero-image">
+    <img
+      src="qmpt-images/image10.jpg"
+      alt="Quality Movement PT clinic treatment room"
+      loading="eager"
+      style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:rotate(90deg) scale(1.8);transform-origin:center center;"
+    />
+    <div class="hero-img-line"></div>
+  </div>
+</section>
+
+
+<!-- SPECIALTIES BAR -->
+<div class="spec-bar">
+  <div class="spec-item"><div class="spec-dot"></div><span class="spec-label">Pelvic Floor Therapy</span></div>
+  <div class="spec-item"><div class="spec-dot"></div><span class="spec-label">Orthopedic Physical Therapy</span></div>
+  <div class="spec-item"><div class="spec-dot"></div><span class="spec-label">Pregnancy &amp; Postpartum Care</span></div>
+  <div class="spec-item"><div class="spec-dot"></div><span class="spec-label">Manual Therapy</span></div>
+  <div class="spec-item"><div class="spec-dot"></div><span class="spec-label">Home Visits</span></div>
+  <div class="spec-item"><div class="spec-dot"></div><span class="spec-label">Dry Needling</span></div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-left-col" style="display:flex;flex-direction:column;gap:14px;flex-shrink:0;width:220px;">
+    <div class="about-img-col">
+      <img
+        src="qmpt-images/image2.jpg"
+        alt="Dr. Rupa Patel performing physical therapy"
+      />
+      <div class="about-img-overlay"></div>
+      <div class="about-img-tag">
+        <h4>Dr. Rupa Patel</h4>
+        <p>Doctor of Physical Therapy</p>
+      </div>
+    </div>
+    <div style="background:#fff;border:1px solid var(--rule);border-left:3px solid var(--teal);border-radius:10px;padding:14px 16px;">
+<ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:7px;">
+        <li style="font-size:0.72rem;color:var(--body);line-height:1.45;padding-left:10px;border-left:2px solid var(--orange);">Certified in Mechanical Diagnosis &amp; Therapy <span style="font-weight:700;color:var(--teal);">(Cert. MDT)</span></li>
+        <li style="font-size:0.72rem;color:var(--body);line-height:1.45;padding-left:10px;border-left:2px solid var(--orange);">Pregnancy &amp; Postpartum Corrective Exercise Specialist <span style="font-weight:700;color:var(--teal);">(PCES)</span></li>
+        <li style="font-size:0.72rem;color:var(--body);line-height:1.45;padding-left:10px;border-left:2px solid var(--orange);">Certified in Dry Needling <span style="font-weight:700;color:var(--teal);">(Cert. DN)</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="about-body reveal">
+    <div class="section-eyebrow teal-ey">Meet Your Therapist</div>
+    <h2 class="section-title">Expertise You Can <em>Trust.</em></h2>
+    <p class="section-body">
+      Dr. Rupa Patel delivers direct, hands-on care at every visit — no aides, no generic programs. Every patient receives a meticulous assessment to uncover the true source of their pain, followed by an expertly crafted individualized treatment plan.
+    </p>
+    <p class="section-body">
+      With specialized training in orthopedic and pelvic floor rehabilitation, Dr. Patel brings a compassionate, evidence-based approach that has transformed the lives of patients across Middlesex and Somerset Counties, NJ.
+    </p>
+
+    <div class="about-highlights">
+      <div class="highlight-card">
+        <div class="highlight-card-icon">🩺</div>
+        <div class="highlight-card-text">
+          <div class="highlight-card-title">Root-Cause Diagnosis</div>
+          <div class="highlight-card-desc">We treat the source of pain, not just the symptoms</div>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-card-icon">📋</div>
+        <div class="highlight-card-text">
+          <div class="highlight-card-title">Detailed Treatment Plans</div>
+          <div class="highlight-card-desc">Personalized programs tracked &amp; adjusted every visit</div>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-card-icon">📱</div>
+        <div class="highlight-card-text">
+          <div class="highlight-card-title">App-Based Home Programs</div>
+          <div class="highlight-card-desc">Exercise plans delivered through a convenient mobile app</div>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-card-icon">❤️</div>
+        <div class="highlight-card-text">
+          <div class="highlight-card-title">Compassionate Practice</div>
+          <div class="highlight-card-desc">Patient-first care in a welcoming, private setting</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-eyebrow">Clinical Specialties</div>
+      <h2 class="section-title">Specialized <em>Physical Therapy</em> Services</h2>
+    </div>
+    <p class="services-desc">
+      Each service is delivered with the same standard: direct one-on-one care from Dr. Patel, a thorough evaluation, and a plan built precisely around your goals and lifestyle.
+    </p>
+  </div>
+  <div class="services-grid">
+    <div class="svc-card reveal">
+      <span class="svc-card-num">01</span>
+      <div class="svc-card-img">
+        <img src="qmpt-images/image9.jpg" alt="Pelvic floor anatomy model" loading="lazy" style="object-position:center 35%;"/>
+      </div>
+      <div class="svc-card-body">
+      <h3>Pelvic Floor Therapy</h3>
+      <p>Specialized, discreet care for pelvic floor dysfunction conditions such as incontinence, pelvic organ prolapse, and/or pelvic pain — delivered with expertise and compassion.</p>
+      <span class="svc-card-tag">Pelvic Health for All Genders</span>
+      </div>
+    </div>
+    <div class="svc-card reveal">
+      <span class="svc-card-num">02</span>
+      <div class="svc-card-img">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80&auto=format&fit=crop&crop=center" alt="Orthopedic rehabilitation session" loading="lazy"/>
+      </div>
+      <div class="svc-card-body">
+      <h3>Orthopedic Rehabilitation</h3>
+      <p>Comprehensive treatment for joint pain, muscle injuries, ligament sprains, and post-surgical recovery — including the McKenzie Method (MDT) for evidence-based assessment and treatment, alongside manual therapy and progressive exercise protocols.</p>
+      <span class="svc-card-tag">Musculoskeletal</span>
+      </div>
+    </div>
+    <div class="svc-card reveal">
+      <span class="svc-card-num">03</span>
+      <div class="svc-card-img">
+        <img src="qmpt-images/image3.jpg" alt="Pregnancy and postpartum physical therapy care" loading="lazy"/>
+      </div>
+      <div class="svc-card-body">
+      <h3>Pregnancy &amp; Postpartum Care</h3>
+      <p>Supportive therapy throughout every stage of motherhood — including birth prep, diastasis recti recovery, pelvic girdle pain, and safe return-to-activity after delivery.</p>
+      <span class="svc-card-tag">Maternal Health</span>
+      </div>
+    </div>
+    <div class="svc-card reveal">
+      <span class="svc-card-num">04</span>
+      <div class="svc-card-img">
+        <img src="qmpt-images/image4.jpg" alt="Dry needling acupuncture treatment session" loading="lazy"/>
+      </div>
+      <div class="svc-card-body">
+      <h3>Dry Needling</h3>
+      <p>This targeted technique releases trigger points and tight muscle bands to relieve pain, restore function, and accelerate healing.</p>
+      <span class="svc-card-tag">Specialty Service</span>
+      </div>
+    </div>
+    <div class="svc-card reveal">
+      <span class="svc-card-num">05</span>
+      <div class="svc-card-img">
+        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&q=80&auto=format&fit=crop&crop=center" alt="Manual therapy hands-on treatment" loading="lazy"/>
+      </div>
+      <div class="svc-card-body">
+      <h3>Manual Therapy</h3>
+      <p>Hands-on techniques to restore mobility, reduce pain, and accelerate recovery. Treatment may include joint mobilization, soft tissue mobilization, myofascial release, cupping therapy, trigger point release, and/or instrument-assisted soft tissue mobilization (IASTM) — selected based on your individual clinical needs.</p>
+      <span class="svc-card-tag">Hands-On Care</span>
+      </div>
+    </div>
+    <div class="svc-card reveal">
+      <span class="svc-card-num">06</span>
+      <div class="svc-card-img">
+        <img src="qmpt-images/image5.jpg" alt="Physical therapist home visit patient" loading="lazy"/>
+      </div>
+      <div class="svc-card-body">
+      <h3>Home PT Visits</h3>
+      <p>Receive the same expert-level therapy in the comfort and safety of your home — ideal for post-surgical patients, seniors, or those with transportation limitations.</p>
+      <span class="svc-card-tag">Mobile Service</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="testimonials-header">
+    <div>
+      <div class="section-eyebrow teal-ey">Google Reviews</div>
+      <h2 class="section-title">What Our Patients <em>Say</em></h2>
+    </div>
+    <div class="google-rating-badge">
+      <div class="google-g-logo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+      </div>
+      <div>
+        <div class="google-score">5.0 <span class="gstars">★★★★★</span></div>
+        <div class="google-count">19 reviews · Google Maps</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel-outer">
+    <button class="carousel-btn carousel-prev" aria-label="Previous reviews">&#8249;</button>
+    <div class="carousel-viewport">
+      <div class="reviews-track" id="reviewsTrack">
+
+        <div class="rcard">
+          <div class="rcard-header">
+            <div class="rcard-avatar">LC</div>
+            <div class="rcard-info">
+              <div class="rcard-name">LC</div>
+              <div class="rcard-date">a month ago</div>
+            </div>
+            <div class="rcard-gbadge">G</div>
+          </div>
+          <div class="rcard-stars">★★★★★</div>
+          <p class="rcard-quote">Rupa is a caring physical therapist. She provided therapy after a hip fracture. We would use her again and recommend her to anyone who wants private therapy at home.</p>
+        </div>
+
+        <div class="rcard">
+          <div class="rcard-header">
+            <div class="rcard-avatar">KS</div>
+            <div class="rcard-info">
+              <div class="rcard-name">Kelly Singer</div>
+              <div class="rcard-date">a month ago</div>
+            </div>
+            <div class="rcard-gbadge">G</div>
+          </div>
+          <div class="rcard-stars">★★★★★</div>
+          <p class="rcard-quote">Rupa is so caring. She is helping me with pelvic floor/back and hip issues. She's a wonderful communicator, dedicated to her patients, always willing to work with you. She also describes everything to you so you have a better understanding of why your body is reacting the way it is. I was scared when the dr told me I needed Pelvic Floor PT and put it off for a while, but if I had known about Dr. Patel and how wonderful and comforting she is, I would have started my journey earlier. She is SO knowledgeable.</p>
+        </div>
+
+        <div class="rcard">
+          <div class="rcard-header">
+            <div class="rcard-avatar">SR</div>
+            <div class="rcard-info">
+              <div class="rcard-name">Susan Rzewnicki</div>
+              <div class="rcard-date">a month ago</div>
+            </div>
+            <div class="rcard-gbadge">G</div>
+          </div>
+          <div class="rcard-stars">★★★★★</div>
+          <p class="rcard-quote">Rupa did a great job helping me with a very sore hip. Stretching and massaging. It helped tremendously.</p>
+        </div>
+
+        <div class="rcard">
+          <div class="rcard-header">
+            <div class="rcard-avatar">DL</div>
+            <div class="rcard-info">
+              <div class="rcard-name">Dana Lenahan</div>
+              <div class="rcard-date">2 months ago</div>
+            </div>
+            <div class="rcard-gbadge">G</div>
+          </div>
+          <div class="rcard-stars">★★★★★</div>
+          <p class="rcard-quote">I knew PFPT was important after giving birth multiple times, and when a friend recommended Dr. Rupa I decided to go for it. I did not know just how much therapy with Dr. Rupa would change my life for the better. She took into consideration my home life, my goals, and where I was starting. I have a new confidence I didn't realize I was missing until I finished my 12 weeks with Dr. Rupa. Effective exercises, helpful manipulation/massage, informative sessions — I couldn't recommend Dr. Rupa enough!</p>
+        </div>
+
+        <div class="rcard">
+          <div class="rcard-header">
+            <div class="rcard-avatar">NP</div>
+            <div class="rcard-info">
+              <div class="rcard-name">Neel Popat</div>
+              <div class="rcard-date">4 months ago</div>
+            </div>
+            <div class="rcard-gbadge">G</div>
+          </div>
+          <div class="rcard-stars">★★★★★</div>
+          <p class="rcard-quote">I can't say enough great things about Quality Movement Physical Therapy, especially Dr. Rupa. When I first came in, I was in severe lower back pain. Within just the first few sessions, I started feeling real improvement. Dr. Rupa is incredibly knowledgeable, caring, and thorough. She didn't just treat the pain — she taught me how to move properly throughout my day and showed me exactly what to do to prevent flare-ups. What really stood out was how available and supportive she was. Highly recommend to anyone dealing with back pain!</p>
+        </div>
+
+        <div class="rcard">
+          <div class="rcard-header">
+            <div class="rcard-avatar">JC</div>
+            <div class="rcard-info">
+              <div class="rcard-name">J Chapman</div>
+              <div class="rcard-date">4 months ago</div>
+            </div>
+            <div class="rcard-gbadge">G</div>
+          </div>
+          <div class="rcard-stars">★★★★★</div>
+          <p class="rcard-quote">Dr Rupa is laser focused on helping me improve my injury. She listens to my concerns and tailors each session according to my needs. She is an integral part of my care team, working with other providers to ensure I get informed, coordinated support. 10/10, she is the health care provider you have been looking for!</p>
+        </div>
+
+        <div class="rcard">
+          <div class="rcard-header">
+            <div class="rcard-avatar">AN</div>
+            <div class="rcard-info">
+              <div class="rcard-name">Anita Navarro</div>
+              <div class="rcard-date">5 months ago</div>
+            </div>
+            <div class="rcard-gbadge">G</div>
+          </div>
+          <div class="rcard-stars">★★★★★</div>
+          <p class="rcard-quote">I called Rupa at Quality Movement in desperation — I was struggling to walk with severe pain in my inner thigh/groin area. After one session she had me walking without crutches. She had me doing strength training exercises and stretches that have me walking and exercising again. She is very patient and knowledgeable. I'm so grateful she was able to help me feel like myself again.</p>
+        </div>
+
+        <div class="rcard">
+          <div class="rcard-header">
+            <div class="rcard-avatar">NS</div>
+            <div class="rcard-info">
+              <div class="rcard-name">Nicole Stuhl</div>
+              <div class="rcard-date">8 months ago</div>
+            </div>
+            <div class="rcard-gbadge">G</div>
+          </div>
+          <div class="rcard-stars">★★★★★</div>
+          <p class="rcard-quote">Rupa is one of a kind! Thorough, professional and kind. She's extremely responsive. Rupa helped me navigate pelvic floor dysfunction and prolapse issues that I've been dealing with my entire adult life. I decided to have surgery and with her help I was lifting, running and back at CrossFit within 3 months post op. Did I mention she makes house calls? Very convenient!</p>
+        </div>
+
+        <div class="rcard">
+          <div class="rcard-header">
+            <div class="rcard-avatar">TL</div>
+            <div class="rcard-info">
+              <div class="rcard-name">Thomas Lyons</div>
+              <div class="rcard-date">9 months ago</div>
+            </div>
+            <div class="rcard-gbadge">G</div>
+          </div>
+          <div class="rcard-stars">★★★★★</div>
+          <p class="rcard-quote">Rupa is a very good physical therapist, very good in explaining the exercises for your issues. I thoroughly enjoyed my visits and appreciated her gentle and thorough therapy plan. I certainly recommend her for your physical therapy.</p>
+        </div>
+
+        <div class="rcard">
+          <div class="rcard-header">
+            <div class="rcard-avatar">DP</div>
+            <div class="rcard-info">
+              <div class="rcard-name">Dilip Pabari</div>
+              <div class="rcard-date">a year ago</div>
+            </div>
+            <div class="rcard-gbadge">G</div>
+          </div>
+          <div class="rcard-stars">★★★★★</div>
+          <p class="rcard-quote">Dr Rupa has been coming to my home as my wife had a stroke and she has really improved a lot. A very kind and experienced therapist. My wife's walking has improved a lot. Thanks.</p>
+        </div>
+
+        <div class="rcard">
+          <div class="rcard-header">
+            <div class="rcard-avatar">DA</div>
+            <div class="rcard-info">
+              <div class="rcard-name">David Arreaga</div>
+              <div class="rcard-date">a year ago</div>
+            </div>
+            <div class="rcard-gbadge">G</div>
+          </div>
+          <div class="rcard-stars">★★★★★</div>
+          <p class="rcard-quote">Dr Rupa is great! Took care of my mother's lower back pain in a very professional way and my mother has shown big improvement with her physical therapy and exercises, allowing her to come back to her normal routine. Much appreciated.</p>
+        </div>
+
+        <div class="rcard">
+          <div class="rcard-header">
+            <div class="rcard-avatar">KD</div>
+            <div class="rcard-info">
+              <div class="rcard-name">Kelly Durma</div>
+              <div class="rcard-date">a year ago</div>
+            </div>
+            <div class="rcard-gbadge">G</div>
+          </div>
+          <div class="rcard-stars">★★★★★</div>
+          <p class="rcard-quote">Dr. Rupa is kind, empathetic, and genuinely listens to your concerns. She has been a great help during my pregnancy and I look forward to continuing to work with her for pelvic floor therapy.</p>
+        </div>
+
+        <div class="rcard">
+          <div class="rcard-header">
+            <div class="rcard-avatar">BB</div>
+            <div class="rcard-info">
+              <div class="rcard-name">Britney Brewton</div>
+              <div class="rcard-date">a year ago</div>
+            </div>
+            <div class="rcard-gbadge">G</div>
+          </div>
+          <div class="rcard-stars">★★★★★</div>
+          <p class="rcard-quote">Dr. Rupa is extremely knowledgeable and helpful. She uses platforms that allow you to continue doing the work independently between visits. She created a well-developed plan and held me accountable. She is flexible with her schedule and very kind. I highly recommend her if you're looking for someone well versed in diastasis recti repair and pelvic floor therapy. All moms should be calling her for a consultation!</p>
+        </div>
+
+        <div class="rcard">
+          <div class="rcard-header">
+            <div class="rcard-avatar">SM</div>
+            <div class="rcard-info">
+              <div class="rcard-name">Sandella Marmorato</div>
+              <div class="rcard-date">a year ago</div>
+            </div>
+            <div class="rcard-gbadge">G</div>
+          </div>
+          <div class="rcard-stars">★★★★★</div>
+          <p class="rcard-quote">I recently was given a prescription from my Dr. to try physical therapy. My alternative was surgery. My personal trainer highly recommended Rupa. I'm thrilled to say that I've made great progress in just a few weeks. I strongly encourage anyone looking for PT to contact Rupa for expert help!</p>
+        </div>
+
+        <div class="rcard">
+          <div class="rcard-header">
+            <div class="rcard-avatar">AN</div>
+            <div class="rcard-info">
+              <div class="rcard-name">Amy Nocera</div>
+              <div class="rcard-date">a year ago</div>
+            </div>
+            <div class="rcard-gbadge">G</div>
+          </div>
+          <div class="rcard-stars">★★★★★</div>
+          <p class="rcard-quote">Dr. Rupa has a beautiful gift of caring for people. Her therapy program was very helpful for me. I wholeheartedly recommend her!</p>
+        </div>
+
+        <div class="rcard">
+          <div class="rcard-header">
+            <div class="rcard-avatar">MG</div>
+            <div class="rcard-info">
+              <div class="rcard-name">Maria Guzman</div>
+              <div class="rcard-date">a year ago</div>
+            </div>
+            <div class="rcard-gbadge">G</div>
+          </div>
+          <div class="rcard-stars">★★★★★</div>
+          <p class="rcard-quote">Rupa is the best! She knows exactly what to do to make you feel back to normal. I will definitely go back.</p>
+        </div>
+
+        <div class="rcard">
+          <div class="rcard-header">
+            <div class="rcard-avatar">MB</div>
+            <div class="rcard-info">
+              <div class="rcard-name">MaryAnn Barricelli</div>
+              <div class="rcard-date">a year ago</div>
+            </div>
+            <div class="rcard-gbadge">G</div>
+          </div>
+          <div class="rcard-stars">★★★★★</div>
+          <p class="rcard-quote">Rupa has been incredibly knowledgeable and helpful throughout my pregnancy as I've dealt with pain as well as preparation for delivery.</p>
+        </div>
+
+        <div class="rcard">
+          <div class="rcard-header">
+            <div class="rcard-avatar">MD</div>
+            <div class="rcard-info">
+              <div class="rcard-name">Mayur Desai</div>
+              <div class="rcard-date">a year ago</div>
+            </div>
+            <div class="rcard-gbadge">G</div>
+          </div>
+          <div class="rcard-stars">★★★★★</div>
+          <p class="rcard-quote">Great service and very friendly staff. We are very happy with the service.</p>
+        </div>
+
+        <div class="rcard">
+          <div class="rcard-header">
+            <div class="rcard-avatar">PS</div>
+            <div class="rcard-info">
+              <div class="rcard-name">Paresh Shah</div>
+              <div class="rcard-date">a year ago</div>
+            </div>
+            <div class="rcard-gbadge">G</div>
+          </div>
+          <div class="rcard-stars">★★★★★</div>
+          <p class="rcard-quote">Dr. Rupa Patel is a highly skilled physical therapist who provides compassionate quality care. She went above and beyond in providing in-home physical therapy for my mother's back and shoulder pain. She was truly invested in her recovery and followed up even after therapy sessions ended. A professional, patient, supportive physical therapist — I highly recommend Dr. Rupa Patel.</p>
+        </div>
+
+      </div>
+    </div>
+    <button class="carousel-btn carousel-next" aria-label="Next reviews">&#8250;</button>
+  </div>
+
+  <div class="carousel-dots" id="carouselDots"></div>
+
+  <div class="google-all-link">
+    <a href="https://share.google/KDb3hmdPyRhwTCz4a" target="_blank" rel="noopener">View all 19 reviews on Google →</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div>
+    <div class="section-eyebrow">Get In Touch</div>
+    <h2 class="section-title">Start Your <em>Recovery</em> Today</h2>
+    <p class="section-body">
+      We're here to answer your questions and help you schedule your first appointment. Reach out by phone, email, or the button below — Dr. Patel personally responds to all inquiries.
+    </p>
+
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="contact-card-icon">📞</div>
+        <div>
+          <div class="contact-card-label">Phone</div>
+          <div class="contact-card-value"><a href="tel:7325952322">732-595-2322</a></div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">✉</div>
+        <div>
+          <div class="contact-card-label">Email</div>
+          <div class="contact-card-value"><a href="mailto:Rupa@qmptwellness.com">Rupa@qmptwellness.com</a></div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">📍</div>
+        <div>
+          <div class="contact-card-label">Clinic Address</div>
+          <div class="contact-card-value"><a href="https://maps.app.goo.gl/V1HxDZfxiMei8qr9A" target="_blank">1001 Lincoln Blvd, Suite D — Middlesex, NJ 08846</a></div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">🕐</div>
+        <div>
+          <div class="contact-card-label">Availability</div>
+          <div class="contact-card-value">In-Clinic · Home Visits · Telehealth</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="social-row">
+      <a class="social-btn" href="https://www.facebook.com/profile.php?id=100089958885966" target="_blank">f Facebook</a>
+      <a class="social-btn" href="https://www.instagram.com/qmptwellness/" target="_blank">◎ Instagram</a>
+    </div>
+
+    <p style="margin-top:20px;font-size:0.85rem;color:var(--gray-l);">
+      Have questions before reaching out?
+      <a href="faq.html" style="color:var(--teal);font-weight:700;text-decoration:none;border-bottom:1px solid rgba(9,114,122,0.3);transition:border-color 0.2s;">Browse our FAQs →</a>
+    </p>
+  </div>
+
+  <div class="contact-form-box reveal">
+    <div style="width:56px;height:56px;background:rgba(255,255,255,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;">📅</div>
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:#fff;line-height:1.25;">Ready to Start<br><em>Your Recovery?</em></h3>
+    <p style="font-size:0.9rem;color:rgba(255,255,255,0.8);line-height:1.8;max-width:300px;">Dr. Patel personally responds to all requests within one business day to confirm your visit.</p>
+    <a href="https://forms.gle/RFcvnA8nos7nFuX66" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--teal);text-decoration:none;padding:16px 36px;border-radius:8px;font-size:0.88rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;box-shadow:0 4px 20px rgba(0,0,0,0.15);transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 28px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.15)'">
+      Request an Appointment →
+    </a>
+    <p style="font-size:0.75rem;color:rgba(255,255,255,0.5);margin-top:4px;">No referral required</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a class="footer-logo" href="#">
+        <img class="footer-logo-img" src="qmpt-images/image7.png" alt="Quality Movement Physical Therapy & Wellness"/>
+      </a>
+      <p class="footer-tagline">Specialized physical therapy focused on individualized, one-on-one care that delivers lasting results.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <a href="#services">Orthopedic Rehab</a>
+      <a href="#services">Pelvic Floor Therapy</a>
+      <a href="#services">Manual Therapy</a>
+      <a href="#services">Pregnancy &amp; Postpartum</a>
+      <a href="#services">Home PT Visits</a>
+    </div>
+    <div class="footer-col">
+      <h5>Practice</h5>
+      <a href="#about">About Dr. Patel</a>
+      <a href="#testimonials">Patient Reviews</a>
+      <a href="faq.html">FAQs</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <a href="tel:7325952322">732-595-2322</a>
+      <a href="mailto:Rupa@qmptwellness.com">Rupa@qmptwellness.com</a>
+      <a href="https://maps.app.goo.gl/V1HxDZfxiMei8qr9A" target="_blank">1001 Lincoln Blvd, Suite D</a>
+      <p>Middlesex, NJ 08846</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Quality Movement Physical Therapy &amp; Wellness, LLC. All Rights Reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Accessibility</a>
+      <a href="https://forms.gle/RFcvnA8nos7nFuX66" target="_blank">Book Appointment</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('in'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Mobile hamburger menu toggle
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    const isOpen = navLinks.classList.contains('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+  // Close on link click
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  // Google Reviews Carousel
+  (function(){
+    const track = document.getElementById('reviewsTrack');
+    const dotsEl = document.getElementById('carouselDots');
+    if(!track || !dotsEl) return;
+    const cards = Array.from(track.querySelectorAll('.rcard'));
+    const total = cards.length;
+    let cur = 0, perView = 3, autoTimer;
+
+    function pvCount(){ return window.innerWidth < 540 ? 1 : window.innerWidth < 960 ? 2 : 3; }
+    function maxIdx(){ return Math.max(0, total - perView); }
+
+    function buildDots(){
+      dotsEl.innerHTML = '';
+      const count = maxIdx() + 1;
+      for(let i = 0; i < count; i++){
+        const d = document.createElement('button');
+        d.className = 'cdot' + (i === cur ? ' active' : '');
+        d.setAttribute('aria-label', 'Review set ' + (i + 1));
+        d.addEventListener('click', () => { clearInterval(autoTimer); goTo(i); startAuto(); });
+        dotsEl.appendChild(d);
+      }
+    }
+
+    function goTo(idx){
+      cur = Math.max(0, Math.min(idx, maxIdx()));
+      const w = cards[0].getBoundingClientRect().width;
+      track.style.transform = 'translateX(-' + (cur * (w + 20)) + 'px)';
+      dotsEl.querySelectorAll('.cdot').forEach((d, i) => d.classList.toggle('active', i === cur));
+    }
+
+    function next(){ goTo(cur >= maxIdx() ? 0 : cur + 1); }
+    function prev(){ goTo(cur <= 0 ? maxIdx() : cur - 1); }
+    function startAuto(){ autoTimer = setInterval(next, 5000); }
+
+    document.querySelector('.carousel-prev').addEventListener('click', () => { clearInterval(autoTimer); prev(); startAuto(); });
+    document.querySelector('.carousel-next').addEventListener('click', () => { clearInterval(autoTimer); next(); startAuto(); });
+    document.querySelector('.carousel-viewport').addEventListener('mouseenter', () => clearInterval(autoTimer));
+    document.querySelector('.carousel-viewport').addEventListener('mouseleave', startAuto);
+
+    window.addEventListener('resize', () => {
+      perView = pvCount();
+      if(cur > maxIdx()) cur = maxIdx();
+      buildDots(); goTo(cur);
+    });
+
+    perView = pvCount();
+    buildDots(); goTo(0); startAuto();
+  })();
+
+  // Active nav highlight on scroll
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navAnchors = document.querySelectorAll('.nav-links li a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+    });
+    navAnchors.forEach(a => {
+      a.style.color = '';
+      a.style.borderBottomColor = '';
+      if (a.getAttribute('href') === '#' + current) {
+        a.style.color = 'var(--teal)';
+        a.style.borderBottomColor = 'var(--teal)';
+      }
+    });
+  }, { passive: true });
+</script>
+</body>
+</html>
